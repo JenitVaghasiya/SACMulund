@@ -181,6 +181,7 @@
     <Content Include="Content\images\floorplan\floor-plan-c.jpg" />
     <Content Include="Content\images\floorplan\floor-plan-E.jpg" />
     <Content Include="Content\images\floorplan\floor-plan.jpg" />
+    <Content Include="Content\images\main_banner.jpg" />
     <Content Include="Content\images\main_banner2.jpg" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery.js" />

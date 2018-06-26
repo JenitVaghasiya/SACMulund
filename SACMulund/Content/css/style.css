@@ -146,7 +146,7 @@ a:hover {
 
 section,
 .section-padding {
-   padding: 100px 0;
+   padding: 50px 0;
    position: relative;
 }
 
@@ -294,7 +294,7 @@ img.pull-right {
 }
 
 .solid-bg {
-   background: #f5f5f5;
+   background: #fff;
    box-shadow: none;
 }
 
@@ -406,7 +406,6 @@ img.pull-right {
 
 .section-title-dash:before {
    position: absolute;
-   content: attr(data-title);
    font-size: 150px;
    color: rgba(0, 0, 0, .04);
    left: 0;
@@ -6815,7 +6814,7 @@ label {
        position: relative;
     overflow: hidden;
     background: #000;
-   height: 600px;
+   height: 555px;
 }
 .navbar-nav li a:hover
 {
@@ -7208,3 +7207,22 @@ color:#a2df48;
     }
 }
 
+.banner-image {
+  background-image: url('../../Content/images/main_banner.jpg');    
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.table thead th {
+    font-size: 20px;
+}
+.table td, .table th {
+    font-size: 20px;
+}
+.table-shadow {
+    box-shadow: 1px 1px 40px #808080;
+}
+.ts-overview
+{
+    background:#f5f5f5;
+}
