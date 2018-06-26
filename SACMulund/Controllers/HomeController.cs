@@ -47,15 +47,14 @@ namespace SACMulund.Controllers
                     UserPassword = WebConfigurationManager.AppSettings["UserPassword"]
                 };
 
-
                 try
                 {
                     var emailMessage = new MimeMessage();
 
                     emailMessage.From.Add(new MailboxAddress(ec.FromName, ec.FromAddress));
-                    emailMessage.To.Add(new MailboxAddress("", email));
+                    emailMessage.To.Add(new MailboxAddress(ec.FromName, ec.FromAddress));
                     emailMessage.Subject = "Contact request";
-                    emailMessage.Body = new TextPart(TextFormat.Html) { Text = "<html><body><table><tr><td colspan='2'>Contact request detail</td></tr><tr><tr><td>Name:</td><td>" + name + "</td></tr><tr><td>Email:</td><td>" + email  + "</td></tr><tr><td>Phone no:</td><td>" + number + "</td></tr></table></body></html>" };
+                    emailMessage.Body = new TextPart(TextFormat.Html) { Text = "<html><body><table><tr style='font-size:18px;'><td colspan='2'>Contact request detail</td></tr><tr><tr><td>Name:</td><td>" + name + "</td></tr><tr><td>Email:</td><td>" + email  + "</td></tr><tr><td>Phone no:</td><td>" + number + "</td></tr></table></body></html>" };
 
                     using (var client = new SmtpClient())
                     {

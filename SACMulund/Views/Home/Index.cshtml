@@ -254,7 +254,7 @@
         <div class="row borderd pull-right">
             <div class="col-md-4">
                 <h2>Inquiry</h2>
-                <form action="/action_page.php">
+                <div id="formsendmail">
                     <div class="form-group">
                         <label for="name">Full Name:</label>
                         <input type="text" class="form-control" id="name" placeholder="Enter email" name="email" required />
@@ -268,10 +268,14 @@
                         <input type="text" class="form-control" id="number" placeholder="Enter password" name="pswd" required />
                     </div>
                     <button type="button" class="btn btn-primary" onclick="sendmail(); return false;">Submit</button>
-                </form>
+                </div>
+                <div id="successmessage" style="display:none;">
+                    this is testing
+                </div>
             </div>
         </div>
     </div>
+
 </section>
 @section Scripts {
     <script type="text/javascript">
@@ -282,6 +286,8 @@
                     $("#name").val('');
                     $("#email").val('');
                     $("#number").val('');
+                    $("#successmessage").show();
+                    $("#formsendmail").hide();
                 })
                 .fail(function (jqxhr, textStatus, error) {
                     // sending mail error
