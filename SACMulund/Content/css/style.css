@@ -817,8 +817,8 @@ cite {
 }
 
 .btn.btn-primary {
-   background: #a2df48;
-   border: 2px solid transparent;
+    background: #021a89;
+    border: 2px solid transparent;
 }
 
 .btn.btn-primary:hover {
@@ -2738,7 +2738,7 @@ span.fact-icon {
 }
 
 .ts-cta-bg {
-   background-image: url("../images/parallax3.jpg");
+
    background-attachment: fixed;
    background-size: cover;
    background-position: right;
@@ -2793,13 +2793,6 @@ span.fact-icon {
    font-size: 30px;
 }
 
-.cta-bg {
-   background: url("../images/cta-bg.jpg");
-   background-size: cover;
-   background-position: center center;
-   width: 100%;
-   min-height: 520px;
-}
 
 @media (max-width:767px) {
    .cta-bg {
@@ -3050,7 +3043,6 @@ span.fact-icon {
 .ts-chart {
    color: #ffffff;
    background-color: #1c1c24;
-   background-image: url(../images/parallax1.jpg);
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
@@ -3481,7 +3473,7 @@ span.fact-icon {
 ================================================== */
 
 .quote-area {
-   background-image: url(../images/parallax2.jpg);
+   
    background-repeat: no-repeat;
    background-size: cover;
    padding: 0;
@@ -3565,36 +3557,6 @@ span.fact-icon {
    font-size: 14px;
 }
 
-/*-- Testimonial --*/
-
-.ts-testimonial-bg {
-   /*--background: url("../images/clients/testimonial-bg.png");--*/
-   background-size: cover;
-   background: #2d3559;
-}
-
-.ts-testimonial-bg.bg-angle-shape:after {
-   background-color: #96db3f;
-}
-
-.ts-testimonial-bg.bg-angle-shape:before {
-   background-color: #a2df48;
-}
-
-.ts-testimonial-static {
-   margin-top: -105px;
-   position: relative;
-   z-index: 2;
-}
-
-.ts-testimonial-bg.bg-angle-shape {
-   padding-bottom: 145px;
-}
-
-.testimonial-item-single:hover .quote-item-static-footer:after {
-   color: #e3f5c8
-}
-
 .text-white .column-title-dash,
 .text-white.column-title {
    color: #fff;
@@ -3608,9 +3570,6 @@ text-white .column-title-dash span:before {
 }
 
 
-.ts-testimonial-bg .column-title-dash:after{
-   display: none;
-}
 
 .quote-item-static-footer img {
    width: 50px;
@@ -3624,14 +3583,6 @@ text-white .column-title-dash span:before {
    position: relative;
 }
 
-.testimonial-item-single {
-   background: #fff;
-   padding: 25px 30px 15px;
-   border-radius: 2px;
-   position: relative;
-   z-index: 1;
-   box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.03);
-}
 
 .quote-text {
    margin-top: 10px;
@@ -4674,7 +4625,7 @@ h4.panel-title a.collapsed:before {
 
 .copyright {
        padding: 0 0 30px;
-    font-size: 14px;
+    font-size: 5px;
     background: #2d3559;
     color: #ffffff ;
 }
@@ -6833,15 +6784,14 @@ color:#a2df48;
     border-radius: 13px;
     color: #545454;
 }
-.aminitie-icon
-{
-
-   background:#2d3559;
-   border:#2d3559;
-   border-radius:50px; 
-   width:100px; 
-   height:100px;
-   position: relative;
+.aminitie-icon {
+    box-shadow: 2px 2px 25px #26272d96;
+    background: #2d3559;
+    border: #2d3559;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    position: relative;
 }
 .aminitie-icon img
 {
@@ -6924,13 +6874,14 @@ color:#a2df48;
 
 /* The Close Button */
 .close {
-    position: absolute;
-    top: 98px;
-    right: 187px;
-    color: #f1f1f1;
-    font-size: 40px;
+    color: white;
+    position: relative;
+    top: 1%;
+    left: 1%;
+    /* right: -4px; */
+    font-size: 35px;
+    float: left;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 .close:hover,
@@ -7225,4 +7176,143 @@ color:#a2df48;
 .ts-overview
 {
     background:#f5f5f5;
+}
+.contact-form-style {
+    position: fixed;
+    right: 0px;
+    box-shadow: 2px 2px 50px #313131;
+    top: 90px;
+    background: #a2df48db;
+    z-index: 1;
+}
+.padding-13{
+    padding:13px;
+}
+.label-color {
+    color: #000;
+    text-shadow:2px 2px 50px #fff;
+    font-weight: 600;
+    font-size:18px;
+}
+.font-size-25 {
+    color: #000000;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.mySlides {
+    display: none;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+img {
+    margin-bottom: -4px;
+}
+
+.caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+}
+
+.demo {
+    opacity: 0.6;
+}
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+
+img.hover-shadow {
+    transition: 0.3s;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

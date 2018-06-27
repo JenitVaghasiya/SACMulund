@@ -67,107 +67,82 @@
 
                                 </ul><!--/ Nav ul end -->
                             </div><!--/ Collapse end -->
-
                         </div><!-- Site Navbar inner end -->
-
                     </div><!--/ Col end -->
                 </div><!--/ Row end -->
-
                 <div class="nav-search">
                     <i class="fas fa-phone" style="font-size:21px;"></i>
                     <span><a href="tel:9825327250">+91-9825327250</a></span>
-
                 </div><!-- Search end -->
-
             </div><!--/ Container end -->
-
         </nav><!--/ Navigation end -->
     </header><!--/ Header end -->
     <!-- Carousel -->
     <div class="carousel-inner">
-        <div class="carousel-item active banner-image" >
+        <div class="carousel-item active banner-image">
         </div><!--/ Carousel item 1 end -->
 
     </div><!-- Carousel inner end-->
     <!-- Controllers -->
     <!--/ Carousel end -->
 
-        @RenderBody()
-    
-        <footer id="footer" class="footer-light">
-            <div class="footer-main">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-12 footer-widget">
-                            <h3 class="widget-title">Site Address</h3>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p>Location:</p>
-                                </div>
-                                <div class="col-md-8">
-                                    <p>1010 Avenue, NY, USA</p>
-                                </div>
-                            </div>
-                        </div><!-- Our Company end -->
+    @RenderBody()
 
-                        <div class="col-lg-3 col-md-12 footer-widget">
-                            <h3 class="widget-title">Contact Us</h3>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p>Location:</p>
-                                </div>
-                                <div class="col-md-8">
-                                    <p>1010 Avenue, NY, USA</p>
-                                </div>
-                            </div><!--Inner row 1 end -->
+    <footer id="footer" class="footer-light">
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 footer-widget">
+                        <h3 class="widget-title">Disclaimer</h3>
 
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p>Call Us:</p>
-                                </div>
-                                <div class="col-md-8">
-                                    <p>009-215-5596 (toll free) <br /> 009-215-5597</p>
-                                </div>
-                            </div><!--Inner row 1 end -->
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p>Mail Us:</p>
-                                </div>
-                                <div class="col-md-8">
-                                    <p>mail@example.com</p>
-                                </div>
-                            </div><!--Inner row 1 end -->
-
-                        </div><!-- Col end -->
-
-                    </div><!--/ Content row end -->
-                </div><!--/ Container end -->
-            </div><!-- Footer Main -->
-            <div class="copyright">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-lg-12 text-center">
-                            <div class="copyright-info">
-                                <span>© Copyright 2018 SSC MULUND.</span>
-                            </div>
+                        <div class="disclaimer">
+                            <p style="text-align:justify" ;="">
+                                This website is in the process of being updated. By accessing this website, the viewer confirms that the information including marketing collaterals on this website are solely for informational purposes only and the viewer has not relied on this information for making any booking/purchase in any project of the Company. Nothing on this website, constitutes advertising, marketing, booking, selling or an offer for sale, or invitation to purchase a unit in any project by the Company. This website belongs to official partner of Godrej Alive Mumbai.
+                            </p>
                         </div>
-                    </div><!-- Row end -->
 
-                    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
+                    </div><!-- Our Company end -->
+
+                    <div class="col-lg-5 col-md-5 footer-widget">
+                        <h3 class="widget-title">Contact Us</h3>
+                        <p>
+                            RERA Number : &nbsp; P51700010303
+                        </p>
+                        <p>
+                            RERA Number : &nbsp; A52100014558
+                        </p>
+                        <p><i class="fas fa-phone-square"></i>  &nbsp;+91-9825327250</p>
+                        <p><i class="far fa-envelope-open"></i> &nbsp;bhargava1010@hotmail.com</p>
+                        <!--Inner row 1 end -->
+                    </div><!-- Col end -->
+
+                </div><!--/ Content row end -->
+            </div><!--/ Container end -->
+        </div><!-- Footer Main -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 text-center">
+                        <div class="copyright-info">
+
+                        </div>
+                    </div>
+                </div><!-- Row end -->
+                @*<div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
                         <button class="btn btn-primary" title="Back to Top">
                             <i class="fas fa-angle-up"></i>
                         </button>
-                    </div>
+                    </div>*@
 
-                </div><!-- Container end -->
-            </div><!-- Copyright end -->
-        </footer><!-- Footer end -->
- 
+            </div><!-- Container end -->
+        </div><!-- Copyright end -->
+    </footer><!-- Footer end -->
     <!-- Javascript Files
     ================================================== -->
     <!-- initialize jQuery Library -->
-
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
     <script src="~/Content/js/jquery.js"></script>
     <!-- Popper JS -->
 
@@ -176,99 +151,48 @@
 
     <script src="~/Content/js/bootstrap.min.js"></script>
     <!-- Owl Carousel -->
-    
+
     <script src="~/Content/js/owl.carousel.min.js"></script>
     <!-- Counter -->
     <script>
-        // Get the modal
-        var modal = document.getElementById('myModal');
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('myImg');
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        img.onclick = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
+        function openModal() {
+            document.getElementById('myModal').style.display = "block";
         }
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-    </script>
-    <script>
-        // Get the modal
-        var modal = document.getElementById('myModalb');
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('myImgb');
-        var modalImg = document.getElementById("img02");
-        var captionText = document.getElementById("captionb");
-        img.onclick = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-        }
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("closeb")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-    </script>
-    <script>
-
-        // Get the modal
-        var modal = document.getElementById('myModalc');
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('myImgc');
-        var modalImg = document.getElementById("img03");
-        var captionText = document.getElementById("captionc");
-        img.onclick = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-        }
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("closec")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
         }
 
-    </script>
-    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
 
-        // Get the modal
-        var modal = document.getElementById('myModae');
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('myImge');
-        var modalImg = document.getElementById("img04");
-        var captionText = document.getElementById("captione");
-        img.onclick = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
         }
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("closee")[0];
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
         }
     </script>
 
 
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
 </body>
 </html>
