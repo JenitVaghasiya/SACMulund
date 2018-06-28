@@ -289,11 +289,11 @@
                     </div>
                     <div class="form-group">
                         <label class="label-color" for="email">Email Id<span style="color:red">*</span>: </label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter password" name="pswd" required />
+                        <input type="email" class="form-control" id="email" placeholder="Enter Email" name="pswd" required />
                     </div>
                     <div class="form-group">
                         <label class="label-color" for="Number">Mobile Number<span style="color:red">*</span>:</label>
-                        <input type="text" class="form-control" id="number" placeholder="Enter password" name="pswd" required />
+                        <input type="text" class="form-control" id="number" placeholder="Enter Number" name="pswd" required />
                     </div>
                     <button type="button" class="col-md-12 btn btn-primary" onclick="sendmail(); return false;">Submit</button>
                 </div>
@@ -310,6 +310,7 @@
         function sendmail() {
             $.post("/home/sendmail", { name: $("#name").val(), email: $("#email").val(), number: $("#number").val() })
                 .done(function (json) {
+                    console.log(json);
                     // mail sent
                     $("#name").val('');
                     $("#email").val('');
