@@ -3,11 +3,11 @@ using MimeKit;
 using SACMulund.Models;
 using System.Web.Configuration;
 using System.Web.Mvc;
-using MailKit.Net.Smtp;
 using System;
 using MailKit.Security;
 using System.Net;
 using MimeKit.Text;
+using System.Net.Mail;
 
 namespace SACMulund.Controllers
 {
@@ -33,55 +33,35 @@ namespace SACMulund.Controllers
         }
 
         [HttpPost]
-        public async System.Threading.Tasks.Task<JsonResult> sendmail(string name, string email, string number)
+        public JsonResult sendmail(string name, string email, string number)
         {
-            if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(email) || !string.IsNullOrEmpty(number))
+            try
             {
                 EmailConfig ec = new EmailConfig
                 {
                     FromAddress = WebConfigurationManager.AppSettings["FromAddress"],
                     FromName = WebConfigurationManager.AppSettings["FromName"],
-                    MailServerAddress = WebConfigurationManager.AppSettings["MailServerAddress"],
-                    MailServerPort = WebConfigurationManager.AppSettings["MailServerPort"],
-                    UserId = WebConfigurationManager.AppSettings["UserId"],
-                    UserPassword = WebConfigurationManager.AppSettings["UserPassword"]
+                    ToAddress = WebConfigurationManager.AppSettings["ToAddress"]
                 };
 
-                try
-                {
-                    var emailMessage = new MimeMessage();
 
-                    emailMessage.From.Add(new MailboxAddress(ec.FromName, ec.FromAddress));
-                    emailMessage.To.Add(new MailboxAddress(ec.FromName, ec.FromAddress));
-                    emailMessage.Subject = "Contact request";
-                    emailMessage.Body = new TextPart(TextFormat.Html) { Text = "<html><body><table><tr style='font-size:18px;'><td colspan='2'>Contact request detail</td></tr><tr><tr><td>Name:</td><td>" + name + "</td></tr><tr><td>Email:</td><td>" + email  + "</td></tr><tr><td>Phone no:</td><td>" + number + "</td></tr></table></body></html>" };
-
-                    using (var client = new SmtpClient())
-                    {
-                        var credentials = new NetworkCredential
-                        {
-                            UserName = ec.UserId,
-                            Password = ec.UserPassword
-                        };
-
-                        //client.LocalDomain = "xyz.dk";
-                        await client.ConnectAsync(ec.MailServerAddress, Convert.ToInt32(ec.MailServerPort), SecureSocketOptions.Auto).ConfigureAwait(false);
-                        client.AuthenticationMechanisms.Remove("XOAUTH2");
-
-                        await client.AuthenticateAsync(credentials);
-
-                        await client.SendAsync(emailMessage);
-                        await client.DisconnectAsync(true).ConfigureAwait(false);
-                        //You need to add return here
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-
+                const string SERVER = "relay-hosting.secureserver.net";
+                MailMessage oMail = new System.Net.Mail.MailMessage();
+                oMail.From = new System.Net.Mail.MailAddress(ec.FromAddress);
+                oMail.To.Add(new System.Net.Mail.MailAddress(ec.ToAddress));
+                oMail.Subject = ec.FromName;// email's subject
+                oMail.Priority = System.Net.Mail.MailPriority.High;
+                oMail.Body = "<html><body><table><tr style='font-size:18px;'><td colspan='2'>Contact request detail</td></tr><tr><tr><td>Name:</td><td>" + name + "</td></tr><tr><td>Email:</td><td>" + email + "</td></tr><tr><td>Phone no:</td><td>" + number + "</td></tr></table></body></html>";
+                oMail.IsBodyHtml = true;
+                SmtpClient smtpClient = new SmtpClient(SERVER);
+                smtpClient.Port = 25;
+                smtpClient.Send(oMail);
+                oMail = null;    // free up resources
             }
-
+            catch (Exception ex)
+            {
+                return Json(ex.Message);
+            }
             return Json(true);
         }
     }
